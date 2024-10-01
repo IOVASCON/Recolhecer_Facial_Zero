@@ -1,0 +1,7 @@
+tensorflow==2.17.0          # Versão do TensorFlow para o modelo de redes neurais
+numpy==1.26.4               # Para operações matemáticas e manipulação de arrays
+opencv-python==4.10.0.84    # Para manipulação de imagens e vídeos
+matplotlib==3.5.1           # Para visualização de imagens e gráficos
+Pillow==9.5.0               # Manipulação de imagens no formato PIL
+scipy==1.11.2               # Biblioteca científica para suporte a funções e otimizações
+dlib==19.22.0               # Biblioteca opcional para detecção facial com modelos pré-treinados

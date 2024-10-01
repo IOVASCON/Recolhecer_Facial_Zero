@@ -1,0 +1,55 @@
+# Ignorar arquivos do Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+
+# Ignorar arquivos de ambiente virtual
+env/
+.venv/
+ENV/
+venv/
+ENV.bak/
+*.env
+
+# Ignorar arquivos de log
+*.log
+*.out
+*.err
+
+# Ignorar diretórios de IDE e editores
+.idea/
+.vscode/
+*.swp
+
+# Ignorar arquivos de configuração do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Ignorar diretórios de backup
+.backup/
+
+# Ignorar outros arquivos binários ou de pacotes
+*.dll
+*.so
+*.dylib
+*.bin
+*.a
+*.lib
+
+# Ignorar modelos e dados, exceto imagens e arquivos de texto permitidos
+models/
+data/processed/
+data/raw/
+
+# Permitir apenas imagens .jpg e .PNG, além de arquivos .txt
+!*.jpg
+!*.PNG
+!*.txt
