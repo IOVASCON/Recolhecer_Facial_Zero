@@ -55,51 +55,51 @@ O projeto está organizado da seguinte maneira:
     ├── .gitignore                        # arquivos ignorados ao GitHub
     └── README.md                         # Documentação e instruções do projeto
 
-## Descrição dos arquivos principais
+## Descrição das pastas e arquivos principais
 
 1. data/images/train: Essa pasta contém as subpastas person1, person2, person3 e unknown, onde você vai salvar as imagens usadas para treinar o modelo.
 
-- person1, person2, person3: Aqui você coloca múltiplas imagens de cada pessoa, usadas para treinamento.
-- unknown: Imagens de rostos que o modelo não conhece, para que ele possa aprender a identificar rostos desconhecidos.
+    - person1, person2, person3: Aqui você coloca múltiplas imagens de cada pessoa, usadas para treinamento.
+    - unknown: Imagens de rostos que o modelo não conhece, para que ele possa aprender a identificar rostos desconhecidos.
 
 2. data/images/test: Essas pastas contêm as imagens usadas para testar o modelo após o treinamento.
 
-- known: Imagens de pessoas que já foram usadas no treinamento, para validar o reconhecimento.
-- unknown: Imagens de pessoas que o modelo não conhece.
+    - known: Imagens de pessoas que já foram usadas no treinamento, para validar o reconhecimento.
+    - unknown: Imagens de pessoas que o modelo não conhece.
 
-    data/raw/: Contém as imagens originais que serão usadas no projeto, como as de treinamento e validação.
+3. data/raw/: Contém as imagens originais que serão usadas no projeto, como as de treinamento e validação.
 
-    models/: Guardará os modelos já treinados, tanto para detecção de faces quanto para a classificação.
+4. models/: Guardará os modelos já treinados, tanto para detecção de faces quanto para a classificação.
 
-    notebooks/: Usaremos essa pasta para criar Jupyter Notebooks onde serão feitos os testes preliminares, visualização dos resultados e ajustes.
+5. notebooks/: Usaremos essa pasta para criar Jupyter Notebooks onde serão feitos os testes preliminares, visualização dos resultados e ajustes.
 
-    prints_projeto/: Contém prints diversos do projeto
+6. prints_projeto/: Contém prints diversos do projeto
 
-    src/detect_faces.py: Script Python responsável por carregar o modelo treinado de detecção e aplicar a detecção em uma imagem ou conjunto de imagens.
+7. src/detect_faces.py: Script Python responsável por carregar o modelo treinado de detecção e aplicar a detecção em uma imagem ou conjunto de imagens.
 
-    src/classify_faces.py: Este script será responsável por classificar as faces detectadas utilizando a rede de classificação.
+8. src/classify_faces.py: Este script será responsável por classificar as faces detectadas utilizando a rede de classificação.
 
-    src/utils.py: Funções auxiliares, como pré-processamento de imagens, manipulação de arquivos, etc.
+9. src/utils.py: Funções auxiliares, como pré-processamento de imagens, manipulação de arquivos, etc.
 
-    src/config.py: Arquivo de configuração, onde definimos os caminhos para os arquivos, parâmetros de rede e configurações gerais do projeto.
+10. src/config.py: Arquivo de configuração, onde definimos os caminhos para os arquivos, parâmetros de rede e configurações gerais do projeto.
 
-    tests/: Contém os testes unitários para verificar a detecção e classificação das faces.
+11. tests/: Contém os testes unitários para verificar a detecção e classificação das faces.
 
-    requirements.txt: Lista de bibliotecas necessárias para rodar o projeto. Exemplo:
+12. requirements.txt: Lista de bibliotecas necessárias para rodar o projeto. Exemplo:
 
 A pasta "images" foi criada para organizar de forma clara e sistemática as imagens utilizadas no treinamento e teste do modelo de reconhecimento facial. Aqui estão as razões por trás dessa estrutura:
 
-    Organização entre dados brutos e processados:
-        raw/: Guarda as imagens brutas, ou seja, aquelas que ainda não foram processadas ou manipuladas.
-        processed/: Guarda as imagens que já passaram por alguma manipulação ou transformação (como redimensionamento, aumento de contraste, etc.).
+1. Organização entre dados brutos e processados:
+    - raw/: Guarda as imagens brutas, ou seja, aquelas que ainda não foram processadas ou manipuladas.
+    - processed/: Guarda as imagens que já passaram por alguma manipulação ou transformação (como redimensionamento, aumento de contraste, etc.).
 
-    Separação entre dados de treino e teste:
-        train/: Contém as imagens que o modelo usará para aprender (ou treinar). Aqui, as imagens são organizadas por classes (exemplo: person1, person2, unknown).
-        test/: Contém as imagens usadas para avaliar o desempenho do modelo, separadas entre rostos conhecidos (known) e desconhecidos (unknown).
+2. Separação entre dados de treino e teste:
+    - train/: Contém as imagens que o modelo usará para aprender (ou treinar). Aqui, as imagens são organizadas por classes (exemplo: person1, person2, unknown).
+    - test/: Contém as imagens usadas para avaliar o desempenho do modelo, separadas entre rostos conhecidos (known) e desconhecidos (unknown).
 
-    Facilita a expansão do projeto:
-        Se no futuro você precisar adicionar mais classes (mais pessoas, por exemplo), a organização em pastas como person1, person2, etc., torna mais fácil fazer isso.
-        A pasta unknown permite adicionar imagens de rostos desconhecidos, uma classe importante em problemas de reconhecimento facial.
+3. Facilita a expansão do projeto:
+    - Se no futuro você precisar adicionar mais classes (mais pessoas, por exemplo), a organização em pastas como person1, person2, etc., torna mais fácil fazer isso.
+    - A pasta unknown permite adicionar imagens de rostos desconhecidos, uma classe importante em problemas de reconhecimento facial.
 
 Em resumo, essa estrutura garante uma separação clara entre os dados usados para diferentes etapas do treinamento e teste do modelo.
 
@@ -153,56 +153,56 @@ Trabalhar com ambientes virtuais é uma prática recomendada para projetos Pytho
 
 1. Criar o Ambiente Virtual
 
-No terminal, navegue até o diretório do seu projeto:
-cd L:\VSCode\PYTHON\DIO\Reconhecer_Facial_Zero
+    - No terminal, navegue até o diretório do seu projeto:
+        cd L:\VSCode\PYTHON\DIO\Reconhecer_Facial_Zero
 
-executar o comando para criar o ambiente virtual:
-python -m venv .venv
+    - executar o comando para criar o ambiente virtual:
+        python -m venv .venv
 
-Isso criará um ambiente virtual na pasta .venv dentro do diretório do seu projeto.
+    Isso criará um ambiente virtual na pasta .venv dentro do diretório do seu projeto.
 
 2. Ativar o Ambiente Virtual - Windows
 
-Dependendo do seu sistema operacional, a ativação do ambiente virtual é diferente:
-.\.venv\Scripts\activate
+    - Dependendo do seu sistema operacional, a ativação do ambiente virtual é diferente:
+        .\.venv\Scripts\activate
 
-Uma vez ativado, uma pasta algo como (.venv) será exibida no início da linha de comando, indicando que o ambiente virtual está ativo.
+        Uma vez ativado, uma pasta algo como (.venv) será exibida no início da linha de comando, indicando que o ambiente virtual está ativo.
 
 3. Instalar Dependências no Ambiente Virtual
 
-Com o ambiente ativado, instale as dependências necessárias para o projeto. Isso pode ser feito usando o arquivo requirements.txt que já criamos anteriormente:
-pip install -r requirements.txt
+    -Com o ambiente ativado, instale as dependências necessárias para o projeto. Isso pode ser feito usando o arquivo requirements.txt que já criamos anteriormente:
+        pip install -r requirements.txt
 
-Isso instalará todas as bibliotecas listadas no arquivo requirements.txt dentro do ambiente virtual.
+        Isso instalará todas as bibliotecas listadas no arquivo requirements.txt dentro do ambiente virtual.
 
 4. Verificar as Instalações
 
-Para garantir que todas as bibliotecas foram instaladas corretamente, verificar as dependências instaladas com o comando:
-python src/detect_faces.py
+    - Para garantir que todas as bibliotecas foram instaladas corretamente, verificar as dependências instaladas com o comando:
+        python src/detect_faces.py
 
-6. Desativar o Ambiente Virtual
+5. Desativar o Ambiente Virtual
 
-Quando terminar de trabalhar, você pode desativar o ambiente virtual com o comando:
-deactivate
+    - Quando terminar de trabalhar, você pode desativar o ambiente virtual com o comando:
+        deactivate
 
-7. Adicionar .venv ao .gitignore
+6. Adicionar .venv ao .gitignore
 
-Se você estiver usando Git para controle de versão, é uma boa prática adicionar a pasta .venv ao seu arquivo .gitignore para que o ambiente virtual não seja incluído no repositório. No arquivo .gitignore, adicione:
-.venv/
+    - Se você estiver usando Git para controle de versão, é uma boa prática adicionar a pasta .venv ao seu arquivo .gitignore para que o ambiente virtual não seja incluído no repositório. No arquivo .gitignore, adicione:
+        .venv/
 
-## Instalação e Dependências
+## Instalação / Dependências
 
 1. Clone o repositório:
-git clone https://
+    git clone <https://github.com/IOVASCON/Recolhecer_Facial_Zero.git>
 
-2.  Navegue para o diretório do projeto e ative o ambiente virtual:
-cd Reconhecer_Facial_Zero source .venv/bin/activate (ou .venv\Scripts\activate no Windows)
+2. Navegue para o diretório do projeto e ative o ambiente virtual:
+    cd Reconhecer_Facial_Zero source .venv/bin/activate (ou .venv\Scripts\activate no Windows)
 
 3. Instale as dependências listadas em `requirements.txt`:
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 4. Certifique-se de que as bibliotecas estão corretamente instaladas rodando os testes:
-python tests/test_simples_bibliotecas_instaladas.py
+    python tests/test_simples_bibliotecas_instaladas.py
 
 ## Execução
 
@@ -219,6 +219,61 @@ Para classificar faces usando o modelo pré-treinado, execute:
 python src/classify_faces.py
 
 Este script detectará as faces nas imagens, classificará as faces e salvará a imagem com as classificações no diretório `data/processed`.
+
+## Imagens do Processo de Desenvolvimento
+
+Aqui estão as imagens que documentam o processo de desenvolvimento:
+
+- **Ambiente Virtual Configurado**:
+  ![Ambiente Virtual](./prints_projeto/Ambiente_Virtual.PNG)
+
+- **Ativação Virtual Configurado**:
+  ![Ativação Ambiente Virtual](./prints_projeto/Ativacao_Ambiente_Virtuall.PNG)
+
+- **Ativação Setuptolls Wheel**:
+  ![Ativação Setuptolls Wheel](./prints_projeto/Atualizando_setuptools_wheel.PNG)
+
+- **Reconhecimento Faces**:
+  ![Face Reconhecida](./prints_projeto/face_reconhecida.PNG)
+
+- **Imagens Destectadas**:
+  ![Detecção de Imagens](./prints_projeto/Imagens_Detectadas.PNG)
+
+- **Bibliotecas Instaladas**:
+  ![Bibliotecas Instaladas](./prints_projeto/Instalacao_requirements.PNG)
+
+- **Execução do Script de Reconhecimento**:
+  ![Execução Script](./prints_projeto/Teste_Reconhecimento_imagem.PNG)
+
+- **Instalaçao Visual Studio Community**:
+  ![Visual Studio Community](./prints_projeto/Instalacao_Visual_Studio_Community_2022.PNG)
+
+- **TensorFlow Instalado**:
+  ![TensorFlow Instalado](./prints_projeto/Instalacao_Tensorflow.PNG)
+
+- **Opencv Python**:
+  ![Pencv Python](./prints_projeto/Instalacao_Opencv-python.PNG)
+
+- **H5py Conda**:
+  ![H5py Conda](./prints_projeto/Instalacao_h5py_conda.PNG)
+
+- **Pillow**:
+  ![Pillow](./prints_projeto/Instalacao_Pillow.PNG)
+
+- **Scipy**:
+  ![Scipy](./prints_projeto/Instalacao_scipy.PNG)
+
+- **Matplotlib**:
+  ![Matplotlib](./prints_projeto/Instalacao_Matplotlib.PNG)
+
+- **Numpy**:
+  ![Numpy](./prints_projeto/Instalacao_Numpy.PNG)
+
+- **Dlib**:
+  ![Dlib](./prints_projeto/Instalacao_dlib.PNG)
+
+- **Hdf5**:
+  ![Hdf5](./prints_projeto/Instalacao_hdf5.PNG)
 
 ## Observações
 
